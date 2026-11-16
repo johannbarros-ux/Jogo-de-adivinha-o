@@ -1,8 +1,7 @@
 # Jogo de Adivinhação de Palavras
 Projeto desenvolvido na disciplina de Desenvolvimento de Aplicações Web I.
 ## Integrantes
-- Nome do aluno 1
-- Nome do aluno 2 (se houver)
+-Johann Barros Brito
 ## Como jogar
 Digite uma letra e clique em Tentar. O objetivo é descobrir a palavra antes de acabar as
 tentativas.
@@ -19,4 +18,4 @@ Web I — Atividade de Encerramento — Jogo de Adivinhação de Palavras
 - Letras utilizadas
 - Reinício da partida
 ## Link do jogo
-Cole aqui o endereço do GitHub Pages depois de publicar.
+https://johannbarros-ux.github.io/Jogo-de-adivinha-o/
