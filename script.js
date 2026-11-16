@@ -1,12 +1,26 @@
 
 const palavras = [
-    "javascript",
-    "html",
-    "css",
-    "internet",
-    "navegador",
-    "programacao",
-    "computador"
+    { palavra: "javascript", categoria: "Tecnologia", dica: "Linguagem de programação muito utilizada na Web." },
+    { palavra: "html", categoria: "Tecnologia", dica: "Linguagem utilizada para estruturar páginas da Web." },
+    { palavra: "css", categoria: "Tecnologia", dica: "Utilizada para estilizar páginas da Web." },
+    { palavra: "internet", categoria: "Tecnologia", dica: "Rede mundial de computadores." },
+    { palavra: "navegador", categoria: "Tecnologia", dica: "Programa utilizado para acessar sites." },
+    { palavra: "computador", categoria: "Tecnologia", dica: "Máquina utilizada para processar informações." },
+
+    { palavra: "elefante", categoria: "Animais", dica: "Animal de grande porte que possui uma tromba." },
+    { palavra: "girafa", categoria: "Animais", dica: "Animal conhecido pelo pescoço muito comprido." },
+    { palavra: "golfinho", categoria: "Animais", dica: "Mamífero que vive na água e é bastante inteligente." },
+    { palavra: "leao", categoria: "Animais", dica: "Conhecido como o rei da selva." },
+
+    { palavra: "paris", categoria: "Cidades", dica: "Cidade francesa conhecida pela Torre Eiffel." },
+    { palavra: "londres", categoria: "Cidades", dica: "Capital da Inglaterra." },
+    { palavra: "tokyo", categoria: "Cidades", dica: "Capital do Japão." },
+    { palavra: "brasilia", categoria: "Cidades", dica: "Capital do Brasil." },
+
+    { palavra: "pizza", categoria: "Alimentos", dica: "Alimento de origem italiana geralmente feito com queijo e molho." },
+    { palavra: "chocolate", categoria: "Alimentos", dica: "Doce produzido a partir do cacau." },
+    { palavra: "banana", categoria: "Alimentos", dica: "Fruta amarela rica em potássio." },
+    { palavra: "lasanha", categoria: "Alimentos", dica: "Prato feito com camadas de massa e recheio." }
 ];
 
 let palavraSecreta;
@@ -22,13 +36,23 @@ const elementoLetrasUsadas = document.getElementById("letras-usadas");
 const botaoTentar = document.getElementById("btn-tentar");
 const botaoReiniciar = document.getElementById("btn-reiniciar");
 
+// Elementos para mostrar a categoria e a dica
+const elementoCategoria = document.createElement("p");
+const elementoDica = document.createElement("p");
+
+elementoPalavra.parentNode.insertBefore(elementoCategoria, elementoPalavra);
+elementoPalavra.parentNode.insertBefore(elementoDica, elementoPalavra);
+
 function iniciarJogo() {
     const indice = Math.floor(Math.random() * palavras.length);
 
-    palavraSecreta = palavras[indice];
+    palavraSecreta = palavras[indice].palavra;
     letrasCorretas = [];
     letrasUsadas = [];
     tentativas = 6;
+
+    elementoCategoria.textContent = "Categoria: " + palavras[indice].categoria;
+    elementoDica.textContent = "Dica: " + palavras[indice].dica;
 
     mensagem.textContent = "";
     inputLetra.value = "";
